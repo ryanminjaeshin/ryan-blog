@@ -1,4 +1,5 @@
 import './App.css';
+import './Navbar.js';
 
 function App() {
   // we can output numbers, strings, and arrays but not object
@@ -10,15 +11,7 @@ function App() {
   return (
     <div className="App">
       <div className="content">
-        <h1>{ title }</h1>
-        <p>Liked { likes } times </p>
-
-        <p>{ 10 }</p>
-        <p>{'hello, Ryan'}</p>
-        <p>{[1,2,3,4,5]}</p>
-        <p>{ Math.random() * 20}</p>
-
-        <a href={ link }>Google Site</a>
+        <h1>App Component</h1>
       </div>
     </div>
   );
