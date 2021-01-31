@@ -1,5 +1,5 @@
 import './App.css';
-import './Navbar.js';
+import Navbar from './Navbar';
 
 function App() {
   // we can output numbers, strings, and arrays but not object
