@@ -19,11 +19,14 @@ const Home = () => {
             .then(res => {
                 return res.json();
             })
-            .then((data) => {
+            .then(data => {
                 console.log(data);
                 setBlogs(data);
                 setIsPending(false);
-            });
+            })
+            .catch(err => {
+                console.log(err.message)
+            })
     }, []);
 
     return (
