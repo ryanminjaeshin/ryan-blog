@@ -7,10 +7,10 @@ const Home = () => {
 
       const [name, setName] = useState('mario');
 
-    const handleDelete = id => {
-        const newBlogs = blogs.filter(blog => blog.id !== id);
-        setBlogs(newBlogs);
-    }
+    // const handleDelete = id => {
+    //     const newBlogs = blogs.filter(blog => blog.id !== id);
+    //     setBlogs(newBlogs);
+    // }
 
     // It is going to run every time there is re-render (Anytime, the data gets changed)
     useEffect(() => {
@@ -26,7 +26,7 @@ const Home = () => {
 
     return (
         <div className="home">
-            {blogs && <BlogList blogs = {blogs} title = 'All Blogs!' handleDelete = {handleDelete}/>}
+            {blogs && <BlogList blogs = {blogs} title = 'All Blogs!' />}
             <button onClick={() => setName('luigi')}>change name></button>
             <p>{name}</p>
         </div>
