@@ -19,8 +19,7 @@ const Home = () => {
     // It is going to run every time there is re-render (Anytime, the data gets changed)
     useEffect(() => {
         console.log('use effect ran')
-        console.log(name)
-    }, [name]);
+    }, []);
 
     return (
         <div className="home">
