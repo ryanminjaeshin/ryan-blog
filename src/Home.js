@@ -5,7 +5,7 @@ const Home = () => {
 
     const [blogs, setBlogs] = useState(null);
 
-      const [name, setName] = useState('mario');
+    //   const [name, setName] = useState('mario');
 
     // const handleDelete = id => {
     //     const newBlogs = blogs.filter(blog => blog.id !== id);
@@ -27,8 +27,8 @@ const Home = () => {
     return (
         <div className="home">
             {blogs && <BlogList blogs = {blogs} title = 'All Blogs!' />}
-            <button onClick={() => setName('luigi')}>change name></button>
-            <p>{name}</p>
+            {/* <button onClick={() => setName('luigi')}>change name></button>
+            <p>{name}</p> */}
         </div>
     );
 }
