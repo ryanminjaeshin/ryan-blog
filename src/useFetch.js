@@ -1,4 +1,9 @@
 const useFetch = () => {
+
+    const [blogs, setBlogs] = useState(null);
+    const [isPending, setIsPending] = useState(true);
+    const [error, setError] = useState(null);
+    
     useEffect(() => {
         fetch('http://localhost:8000/blogs')
             .then(res => {
