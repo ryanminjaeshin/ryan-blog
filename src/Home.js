@@ -7,14 +7,6 @@ const Home = () => {
     const [isPending, setIsPending] = useState(true);
     const [error, setError] = useState(null);
 
-    //   const [name, setName] = useState('mario');
-
-    // const handleDelete = id => {
-    //     const newBlogs = blogs.filter(blog => blog.id !== id);
-    //     setBlogs(newBlogs);
-    // }
-
-    // It is going to run every time there is re-render (Anytime, the data gets changed)
     useEffect(() => {
         fetch('http://localhost:8000/blogs')
             .then(res => {
