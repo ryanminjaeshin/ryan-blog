@@ -11,6 +11,8 @@ const Create = () => {
         <input
           type="text"
           required
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
         />
         <label>Blog body:</label>
         <textarea
