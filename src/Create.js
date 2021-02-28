@@ -25,6 +25,10 @@ const Create = () => {
       console.log('New blog added')
       // Appears loading... message when it's loading
       setIsPending(false);
+      // It goes to one page back once the new blog is added
+      // history.go(-1);
+      // it goes to Home once the new blog is added
+      history.push('/');
     })
   }
 
