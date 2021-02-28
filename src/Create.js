@@ -2,6 +2,8 @@ import { useState } from 'react';
 
 const Create = () => {
   const [title, setTitle] = useState('');
+  const [body, setBody] = useState('');
+
 
   return (
     <dlv className="create">
@@ -17,6 +19,8 @@ const Create = () => {
         <label>Blog body:</label>
         <textarea
           required
+          value={body}
+          onChange={(e) => setBody(e.target.value)}
         />
         <label>Blog author:</label>
         <select>
