@@ -26,6 +26,7 @@ const useFetch = (url) => {
                 setError(err.message);
             })
             // whenever url gets changed, useEffect function will be ran'
+            return () => console.log('cleanup')
     }, [url]);
 
     return { data, isPending, error }
