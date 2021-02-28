@@ -4,10 +4,14 @@ const Create = () => {
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
   const [author, setAuthor] = useState('mario');
+  const [isPending, setIsPending] = useState(false);
 
   const handleSubmit = e => {
     e.preventDefault();
     const blog = { title, body, author };
+
+    // Appears loading... message when it's loading
+    setIsPending(true);
 
     // Second argument is the type of request
     fetch('http://localhost:8000/blogs', {
@@ -17,6 +21,8 @@ const Create = () => {
     })
     .then(() => {
       console.log('New blog added')
+      // Appears loading... message when it's loading
+      setIsPending(false);
     })
   }
 
@@ -45,7 +51,8 @@ const Create = () => {
           <option value="mario">mario</option>
           <option value="yoshi">yoshi</option>
         </select>
-        <button>Add Blog</button>
+        { !isPending && <button>Add Blog</button> }
+        { isPending && <button disabled>Adding blog...</button>}
       </form>
     </dlv>
   );
