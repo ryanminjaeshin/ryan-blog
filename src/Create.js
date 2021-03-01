@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 
 const Create = () => {
@@ -7,6 +7,12 @@ const Create = () => {
   const [author, setAuthor] = useState('mario');
   const [isPending, setIsPending] = useState(false);
   const history = useHistory();
+
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    inputRef.current.focus();
+  })
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -42,6 +48,7 @@ const Create = () => {
           required
           value={title}
           onChange={(e) => setTitle(e.target.value)}
+          ref={inputRef}
         />
         <label>Blog body:</label>
         <textarea
@@ -57,7 +64,7 @@ const Create = () => {
           <option value="mario">mario</option>
           <option value="yoshi">yoshi</option>
         </select>
-        { !isPending && <button>Add Blog</button> }
+        { !isPending && <button >Add Blog</button> }
         { isPending && <button disabled>Adding blog...</button>}
       </form>
     </dlv>
